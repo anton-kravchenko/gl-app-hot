@@ -1,5 +1,5 @@
 <div class="root">
-  <app-list [hotels]="hotels"></app-list>
-  <app-weather [weather]="hotels[0].weather"></app-weather>
-  <app-profile [profile]="hotels[2].profile"></app-profile>
+  <app-list [hotels]="hotels" [selectedHotel]="selectedHotel"></app-list>
+  <app-weather [weather]="selectedHotel.weather"></app-weather>
+  <app-profile [profile]="selectedHotel.profile"></app-profile>
 </div>

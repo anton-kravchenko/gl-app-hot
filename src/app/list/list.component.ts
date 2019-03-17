@@ -8,8 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ListComponent implements OnInit {
   @Input() hotels: Array<IHotel>;
+  @Input() selectedHotel: IHotel;
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

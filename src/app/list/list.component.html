@@ -1,3 +1,6 @@
 <div *ngFor="let hotel of hotels">
-  <app-hotel-card [hotel]="hotel"></app-hotel-card>
+  <app-hotel-card
+    [hotel]="hotel"
+    [isSelected]="hotel === selectedHotel"
+  ></app-hotel-card>
 </div>

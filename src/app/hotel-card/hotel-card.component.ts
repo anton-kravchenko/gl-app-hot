@@ -8,7 +8,11 @@ import { IHotel } from '../models/hotels.models';
 })
 export class HotelCardComponent implements OnInit {
   @Input() hotel: IHotel;
+  @Input() isSelected: boolean;
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.hotel, this.isSelected);
+  }
 }
