@@ -1,0 +1,24 @@
+.root {
+  width: 300px;
+  margin: 10px;
+}
+
+.root-image {
+  width: 300px;
+}
+
+.label {
+  text-align: left;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.img-preview {
+  padding: 5px;
+  height: 70px;
+  width: 70px;
+  border-radius: 45px;
+}

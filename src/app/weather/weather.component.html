@@ -1,8 +1,10 @@
-<div>
-  <mat-card>
-    <p>
-      weather works!
-    </p>
-    <button mat-raised-button color="primary">Primary</button>
-  </mat-card>
-</div>
+<mat-card class="root">
+  <p>Weather</p>
+
+  <div class="row">
+    <mat-icon>{{ weather.icon }}</mat-icon>
+    <div>{{ weather.temperature }}°</div>
+  </div>
+
+  <div>{{ weather.wind }}m/s</div>
+</mat-card>

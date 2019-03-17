@@ -1,0 +1,19 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.root {
+  width: 200px;
+  margin: 10px;
+}
+
+.label {
+  margin: 5px;
+}
+
+.img {
+  width: 100%;
+  object-fit: cover;
+  height: 100px;
+}

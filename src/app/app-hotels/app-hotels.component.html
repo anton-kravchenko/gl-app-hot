@@ -1,3 +1,5 @@
-<p>
-  app-hotels works!
-</p>
+<div class="root">
+  <app-list [hotels]="hotels"></app-list>
+  <app-weather [weather]="hotels[0].weather"></app-weather>
+  <app-profile [profile]="hotels[2].profile"></app-profile>
+</div>

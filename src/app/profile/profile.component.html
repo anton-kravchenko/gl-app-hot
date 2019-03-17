@@ -1,3 +1,13 @@
-<p>
-  profile works!
-</p>
+<mat-card class="root">
+  <img [src]="profile.photo" class="img" />
+  <div class="row">
+    <div class="label">
+      <p>Followers:</p>
+      <p>{{ profile.followers }}</p>
+    </div>
+    <div class="label">
+      <p>Following:</p>
+      <p>{{ profile.following }}</p>
+    </div>
+  </div>
+</mat-card>

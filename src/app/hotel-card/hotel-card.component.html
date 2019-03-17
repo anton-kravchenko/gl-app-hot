@@ -1,0 +1,23 @@
+<mat-card class="root">
+  <mat-card-content>
+    <img [src]="hotel.picture" class="root-image" />
+
+    <div class="flex-row">
+      <div>
+        <h3 class="label" mat-line>{{ hotel.title }}</h3>
+        <h4 class="label" mat-line>{{ hotel.address }}</h4>
+        <p class="label" mat-line>{{ hotel.description }}</p>
+        <p class="label" mat-line>{{ hotel.phone }}</p>
+      </div>
+
+      <div>
+        <img
+          *ngFor="let imrUrl of hotel.photos"
+          [src]="imrUrl"
+          class="img-preview"
+        />
+        <button mat-raised-button color="primary">Add to favorites</button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

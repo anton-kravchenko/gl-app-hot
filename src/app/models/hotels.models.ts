@@ -6,15 +6,21 @@ export interface IHotel {
   phone: string;
   picture: string;
   photos: Array<string>;
-  weather: {
-    temperature: number;
-    wind: number;
-    icon: string;
-  };
-  profile: {
-    followers: number;
-    following: number;
-    photo: string;
-  };
-  stars: 1 | 2 | 3 | 4 | 5;
+  weather: IWeather;
+  profile: IProfile;
+  stars: Stars;
 }
+
+export interface IProfile {
+  followers: number;
+  following: number;
+  photo: string;
+}
+
+export interface IWeather {
+  temperature: number;
+  wind: number;
+  icon: string;
+}
+
+export type Stars = 1 | 2 | 3 | 4 | 5;
