@@ -1,0 +1,8 @@
+<input (input)="search($event.target.value)" type="text" />
+<div>
+  <ul>
+    <li *ngFor="let item of words">
+      {{ item.word }}
+    </li>
+  </ul>
+</div>

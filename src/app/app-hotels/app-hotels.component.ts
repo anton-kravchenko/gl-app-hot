@@ -9,30 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppHotelsComponent implements OnInit {
   public hotels: Array<IHotel>;
-  public selectedHotel: IHotel;
+  public selectedHotel: IHotel | null = null;
 
   constructor(private hotelsService: HotelsService) {}
 
   ngOnInit() {
     this.getHotels();
-    this.getSelectedHotel();
   }
 
-  onHotelSelect(h: IHotel): void {
-    this.selectedHotel = h;
+  public getHotels(): void {
+    this.hotelsService.getHotels().subscribe((hotels: Array<IHotel>) => {
+      this.hotels = hotels;
+      this.selectHotel(hotels[0]);
+    });
   }
 
-  // public getHotels(): void {
-  //   this.hotelsService
-  //     .getHotels()
-  //     .subscribe((h: Array<IHotel>) => (this.hotels = h));
-  // }
-
-  private getHotels(): void {
-    this.hotels = this.hotelsService.getHotels();
-  }
-
-  private getSelectedHotel(): void {
-    this.selectedHotel = this.hotelsService.getSelectedHotel();
+  public selectHotel(hotel: IHotel): void {
+    this.selectedHotel = hotel;
   }
 }

@@ -1,6 +1,7 @@
 import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HotelCardComponent } from './hotel-card/hotel-card.component';
+import { HotelsFilterComponent } from './hotels-filter/hotels-filter.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import { HotelCardComponent } from './hotel-card/hotel-card.component';
     FooterComponent,
     NavBarComponent,
     HotelCardComponent,
+    HotelsFilterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
