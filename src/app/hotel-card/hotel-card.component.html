@@ -17,7 +17,7 @@
           class="img-preview"
         />
         <button
-          (click)="addToFavorites(hotel)"
+          (click)="addToFavorites(hotel); $event.stopPropagation()"
           mat-raised-button
           color="primary"
         >

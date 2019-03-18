@@ -14,9 +14,8 @@ export class HotelCardComponent implements OnInit {
 
   constructor(private hotelsService: HotelsService) {}
 
-  ngOnInit() {
-    console.log(this.hotel, this.isSelected);
-  }
+  // FIXME: REMOVE ALL EMPTY hooks / constructors
+  ngOnInit() {}
 
   public addToFavorites(h: IHotel): void {
     // this.hotelsService.addToFavoriteHotels(h);
