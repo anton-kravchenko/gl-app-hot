@@ -2,5 +2,7 @@
   <app-hotel-card
     [hotel]="hotel"
     [isSelected]="hotel === selectedHotel"
-  ></app-hotel-card>
+    (click)="onHotelSelect(hotel)"
+  >
+  </app-hotel-card>
 </div>

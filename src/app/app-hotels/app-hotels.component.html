@@ -1,7 +1,11 @@
 <app-hotels-filter></app-hotels-filter>
 
 <div class="root">
-  <app-list [hotels]="hotels" [selectedHotel]="selectedHotel"></app-list>
+  <app-list
+    [hotels]="hotels"
+    [selectedHotel]="selectedHotel"
+    (selectHotel)="selectHotel($event)"
+  ></app-list>
   <app-weather [weather]="selectedHotel.weather"></app-weather>
   <app-profile [profile]="selectedHotel.profile"></app-profile>
 </div>

@@ -1,5 +1,5 @@
 import { IHotel } from './../models/hotels.models';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-list',
@@ -9,8 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ListComponent implements OnInit {
   @Input() hotels: Array<IHotel>;
   @Input() selectedHotel: IHotel;
+  @Output() selectHotel = new EventEmitter<IHotel>();
 
   constructor() {}
 
   public ngOnInit() {}
+
+  public onHotelSelect(hotel: IHotel): void {
+    this.selectHotel.emit(hotel);
+  }
 }

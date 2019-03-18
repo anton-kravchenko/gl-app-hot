@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IHotel } from '../models/hotels.models';
 import { HotelsService } from '../services/hotels.service';
 
@@ -10,6 +10,7 @@ import { HotelsService } from '../services/hotels.service';
 export class HotelCardComponent implements OnInit {
   @Input() hotel: IHotel;
   @Input() isSelected: boolean; // FIXME: REMOVE
+  @Output() selectHotel = new EventEmitter<IHotel>();
 
   constructor(private hotelsService: HotelsService) {}
 
@@ -17,11 +18,7 @@ export class HotelCardComponent implements OnInit {
     console.log(this.hotel, this.isSelected);
   }
 
-  public onSelect(h: IHotel): void {
-    this.hotelsService.selectHotel(h);
-  }
-
   public addToFavorites(h: IHotel): void {
-    this.hotelsService.addToFavoriteHotels(h);
+    // this.hotelsService.addToFavoriteHotels(h);
   }
 }
