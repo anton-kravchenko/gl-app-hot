@@ -1,4 +1,4 @@
-<mat-card class="root" [class.selected]="isSelected">
+<mat-card class="root" [class.selected]="isSelected" (click)="onSelect(hotel)">
   <mat-card-content>
     <img [src]="hotel.picture" class="root-image" />
 
@@ -16,7 +16,13 @@
           [src]="imrUrl"
           class="img-preview"
         />
-        <button mat-raised-button color="primary">Add to favorites</button>
+        <button
+          (click)="addToFavorites(hotel)"
+          mat-raised-button
+          color="primary"
+        >
+          Add to favorites
+        </button>
       </div>
     </div>
   </mat-card-content>

@@ -15,18 +15,24 @@ export class AppHotelsComponent implements OnInit {
 
   ngOnInit() {
     this.getHotels();
-    this.selectHotelByDefault();
+    this.getSelectedHotel();
   }
 
   onHotelSelect(h: IHotel): void {
     this.selectedHotel = h;
   }
 
-  public getHotels(): void {
+  // public getHotels(): void {
+  //   this.hotelsService
+  //     .getHotels()
+  //     .subscribe((h: Array<IHotel>) => (this.hotels = h));
+  // }
+
+  private getHotels(): void {
     this.hotels = this.hotelsService.getHotels();
   }
 
-  private selectHotelByDefault(): void {
-    this.selectedHotel = this.hotels[0];
+  private getSelectedHotel(): void {
+    this.selectedHotel = this.hotelsService.getSelectedHotel();
   }
 }
