@@ -21,7 +21,7 @@ export class HotelsService {
   constructor(private notificationsManager: NotificationManagerService) {}
 
   public getHotels(): Observable<Array<IHotel>> {
-    return of(HOTELS); // FIXME : async
+    return of(HOTELS);
   }
 
   public getFavoriteHotels(): Array<IHotel> {
@@ -33,7 +33,7 @@ export class HotelsService {
       this.favoriteHotels.push(hotelToAdd);
       this.notificationsManager.postNotification({
         type: 'info',
-        message: `${hotelToAdd.title} has ben added to the list of favorite hotels.`,
+        message: `${hotelToAdd.title} has been added to the list of favorite hotels.`,
       });
     } else {
       this.notificationsManager.postNotification({

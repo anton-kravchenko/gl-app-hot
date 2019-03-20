@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { range } from 'lodash';
 import { IHotel } from '../models/hotels.models';
 import { HotelsService } from '../services/hotels.service';
@@ -8,17 +8,14 @@ import { HotelsService } from '../services/hotels.service';
   templateUrl: './hotel-card.component.html',
   styleUrls: ['./hotel-card.component.css'],
 })
-export class HotelCardComponent implements OnInit {
+export class HotelCardComponent {
   @Input() hotel: IHotel;
-  @Input() isSelected: boolean; // FIXME: REMOVE
+  @Input() isSelected: boolean;
   @Output() selectHotel = new EventEmitter<IHotel>();
 
   public range = range;
 
   constructor(private hotelsService: HotelsService) {}
-
-  // FIXME: REMOVE ALL EMPTY hooks / constructors
-  ngOnInit() {}
 
   public addToFavorites(h: IHotel): void {
     this.hotelsService.addToFavoriteHotels(h);
@@ -30,5 +27,9 @@ export class HotelCardComponent implements OnInit {
 
   public isInListOfFavorites(h: IHotel): boolean {
     return this.hotelsService.isInFavorites(h);
+  }
+
+  public generateRange(till: number): Array<number> {
+    return range(till);
   }
 }
