@@ -25,7 +25,7 @@ export class HotelsService {
   }
 
   public removeFromFavoriteHotels(hotelToRemove: IHotel): void {
-    this.favoriteHotels = this.favoriteHotels.filter((hotel: IHotel) => hotel !== hotelToRemove)
+    this.favoriteHotels.splice(this.favoriteHotels.indexOf(hotelToRemove), 1);
   }
 
   public isInFavorites(hotel: IHotel): boolean {

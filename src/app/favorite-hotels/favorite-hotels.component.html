@@ -1,0 +1,7 @@
+<div *ngIf="favoriteHotels.length">
+  <h2>Favorite hotels:</h2>
+
+  <mat-list *ngFor="let favHotel of favoriteHotels">
+      <mat-list-item>{{favHotel.title}}</mat-list-item>
+  </mat-list>
+</div>
