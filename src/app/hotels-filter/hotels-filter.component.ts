@@ -1,5 +1,6 @@
-import { HotelsService } from './../services/hotels.service';
 import { Component } from '@angular/core';
+import { range } from 'lodash';
+import { HotelsService } from './../services/hotels.service';
 
 @Component({
   selector: 'app-hotels-filter',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./hotels-filter.component.css'],
 })
 export class HotelsFilterComponent {
+  public range = range;
   constructor(private hotelsService: HotelsService) {}
   updateSearchKeyword(keyword: string): void {
     this.hotelsService.setHotelsFilterKeyword(keyword);
