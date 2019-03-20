@@ -1,5 +1,8 @@
 # Implementation status
 
+- [x] pipe, фильтрация hotels
+  - [x] инпут поле - поиск по title и description
+  - [x] вместо | Hotel | Fishing | Tours | Weather | - сортировку по звездам (можно All | **\* | \*\*** | **\***) и чтобы они вместе работали
 - [x] добавить компоненту favorites hotels
   - [x] данные в app-hotels, на том же уровне где и hotels, selectedHotel
   - [x] отображает список
