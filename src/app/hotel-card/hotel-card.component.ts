@@ -18,6 +18,14 @@ export class HotelCardComponent implements OnInit {
   ngOnInit() {}
 
   public addToFavorites(h: IHotel): void {
-    // this.hotelsService.addToFavoriteHotels(h);
+    this.hotelsService.addToFavoriteHotels(h);
+  }
+
+  public removeFromFavorites(h: IHotel): void {
+    this.hotelsService.removeFromFavoriteHotels(h)
+  }
+
+  public isInListOfFavorites(h: IHotel): boolean {
+    return this.hotelsService.isInFavorites(h);
   }
 }

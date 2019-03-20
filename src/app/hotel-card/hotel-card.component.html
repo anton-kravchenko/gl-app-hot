@@ -17,12 +17,23 @@
           class="img-preview"
         />
         <button
+          *ngIf="isInListOfFavorites(hotel) === false; else remove_from_favorites_button"
           (click)="addToFavorites(hotel); $event.stopPropagation()"
           mat-raised-button
           color="primary"
         >
           Add to favorites
         </button>
+        <ng-template #remove_from_favorites_button>
+          <button
+          (click)="removeFromFavorites(hotel); $event.stopPropagation()"
+          mat-raised-button
+          color="warn"
+        >
+          Remove from favorites
+        </button>
+        </ng-template>
+
       </div>
     </div>
   </mat-card-content>
