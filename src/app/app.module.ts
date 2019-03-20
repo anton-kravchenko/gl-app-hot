@@ -9,9 +9,6 @@ import { AppHotelsComponent } from './app-hotels/app-hotels.component';
 import { ListComponent } from './list/list.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ProfileComponent } from './profile/profile.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HotelCardComponent } from './hotel-card/hotel-card.component';
 import { HotelsFilterComponent } from './hotels-filter/hotels-filter.component';
@@ -23,9 +20,6 @@ import { HotelsFilterComponent } from './hotels-filter/hotels-filter.component';
     ListComponent,
     WeatherComponent,
     ProfileComponent,
-    HeaderComponent,
-    FooterComponent,
-    NavBarComponent,
     HotelCardComponent,
     HotelsFilterComponent,
   ],
