@@ -15,6 +15,8 @@ import { HotelsFilterComponent } from './hotels-filter/hotels-filter.component';
 import { FavoriteHotelsComponent } from './favorite-hotels/favorite-hotels.component';
 import { HotelsFilterPipe } from './pipes/hotels-filter.pipe';
 import { HotelsStarsFilterPipe } from './pipes/hotels-stars-filter.pipe';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { MatSnackBarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -28,12 +30,14 @@ import { HotelsStarsFilterPipe } from './pipes/hotels-stars-filter.pipe';
     FavoriteHotelsComponent,
     HotelsFilterPipe,
     HotelsStarsFilterPipe,
+    NotificationsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
+    MatSnackBarModule,
     HttpClientModule,
   ],
   providers: [],
