@@ -15,7 +15,7 @@
     - [x] 'Удалено из favorites!'
     - [x] Если элемент уже есть в списке favorites
       - [x] или попап что уже добавлен
-      - [] - или считать колличетсво нажатий (voted - IFavoriteHotel расширить полем от IHotel)
+      - [ ] - или считать колличетсво нажатий (voted - IFavoriteHotel расширить полем от IHotel)
 - сделать загрузку hotels асинхронной (setTimeout, 3 sec) -
 - для advanced - можно сделать спискок this.hotels\$ = of(mockedHotels).pipe(delay(3000))
 - для advanced - кастомная директива, навешиваем на hotels list, пока гдузиться сделать оверлей над списком
