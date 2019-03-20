@@ -8,9 +8,8 @@ describe('FavoriteHotelsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FavoriteHotelsComponent ]
-    })
-    .compileComponents();
+      declarations: [FavoriteHotelsComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

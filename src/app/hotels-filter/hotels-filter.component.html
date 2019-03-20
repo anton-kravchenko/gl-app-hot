@@ -2,11 +2,7 @@
 <div class="row">
   <input (input)="setSearchKeyword($event.target.value)" type="text" />
 
-  <div
-    (click)="setStarsFilter(star)"
-    *ngFor="let star of range(3, 6, 1)"
-    class="row pointer"
-  >
+  <div (click)="setStarsFilter(star)" *ngFor="let star of genRange(3, 6, 1)" class="row pointer">
     <p class="label">{{ star }}</p>
     <mat-icon>star</mat-icon>
   </div>

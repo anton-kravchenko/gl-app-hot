@@ -8,9 +8,8 @@ describe('AppHotelsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppHotelsComponent ]
-    })
-    .compileComponents();
+      declarations: [AppHotelsComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

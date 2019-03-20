@@ -11,16 +11,9 @@
       </div>
 
       <div>
-        <img
-          *ngFor="let imrUrl of hotel.photos"
-          [src]="imrUrl"
-          class="img-preview"
-        />
+        <img *ngFor="let imrUrl of hotel.photos" [src]="imrUrl" class="img-preview" />
         <button
-          *ngIf="
-            isInListOfFavorites(hotel) === false;
-            else remove_from_favorites_button
-          "
+          *ngIf="isInListOfFavorites(hotel) === false; else remove_from_favorites_button"
           (click)="addToFavorites(hotel); $event.stopPropagation()"
           mat-raised-button
           color="primary"

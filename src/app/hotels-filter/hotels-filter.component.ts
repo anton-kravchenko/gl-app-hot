@@ -8,7 +8,6 @@ import { HotelsService, StarsFiltering } from './../services/hotels.service';
   styleUrls: ['./hotels-filter.component.css'],
 })
 export class HotelsFilterComponent {
-  public range = range;
   constructor(private hotelsService: HotelsService) {}
 
   setSearchKeyword(keyword: string): void {
@@ -17,5 +16,9 @@ export class HotelsFilterComponent {
 
   setStarsFilter(starsFilter: StarsFiltering): void {
     this.hotelsService.setHotelsStatsFiltering(starsFilter);
+  }
+
+  public genRange(from: number, to: number, step: number): Array<number> {
+    return range(from, to, step);
   }
 }
