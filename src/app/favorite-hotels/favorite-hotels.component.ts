@@ -16,4 +16,8 @@ export class FavoriteHotelsComponent implements OnInit {
     this.favoriteHotels = this.hotelsService.getFavoriteHotels();
   }
 
+  public removeFromFavorites(hotel: IHotel): void {
+    this.hotelsService.removeFromFavoriteHotels(hotel);
+  }
+
 }

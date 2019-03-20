@@ -2,6 +2,13 @@
   <h2>Favorite hotels:</h2>
 
   <mat-list *ngFor="let favHotel of favoriteHotels">
-      <mat-list-item>{{favHotel.title}}</mat-list-item>
+      <mat-list-item>
+
+        <div>{{favHotel.title}}</div>
+        <mat-icon
+          (click)="removeFromFavorites(favHotel); $event.stopPropagation()"
+          class="close-icon"
+        >close</mat-icon>
+      </mat-list-item>
   </mat-list>
 </div>
