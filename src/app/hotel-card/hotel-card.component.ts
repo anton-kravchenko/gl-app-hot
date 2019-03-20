@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { range } from 'lodash';
 import { IHotel } from '../models/hotels.models';
 import { HotelsService } from '../services/hotels.service';
 
@@ -12,6 +13,8 @@ export class HotelCardComponent implements OnInit {
   @Input() isSelected: boolean; // FIXME: REMOVE
   @Output() selectHotel = new EventEmitter<IHotel>();
 
+  public range = range;
+
   constructor(private hotelsService: HotelsService) {}
 
   // FIXME: REMOVE ALL EMPTY hooks / constructors
@@ -22,7 +25,7 @@ export class HotelCardComponent implements OnInit {
   }
 
   public removeFromFavorites(h: IHotel): void {
-    this.hotelsService.removeFromFavoriteHotels(h)
+    this.hotelsService.removeFromFavoriteHotels(h);
   }
 
   public isInListOfFavorites(h: IHotel): boolean {

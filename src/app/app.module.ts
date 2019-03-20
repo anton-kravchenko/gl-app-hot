@@ -14,6 +14,7 @@ import { HotelCardComponent } from './hotel-card/hotel-card.component';
 import { HotelsFilterComponent } from './hotels-filter/hotels-filter.component';
 import { FavoriteHotelsComponent } from './favorite-hotels/favorite-hotels.component';
 import { HotelsFilterPipe } from './pipes/hotels-filter.pipe';
+import { HotelsStarsFilterPipe } from './pipes/hotels-stars-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HotelsFilterPipe } from './pipes/hotels-filter.pipe';
     HotelsFilterComponent,
     FavoriteHotelsComponent,
     HotelsFilterPipe,
+    HotelsStarsFilterPipe,
   ],
   imports: [
     BrowserModule,

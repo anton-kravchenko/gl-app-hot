@@ -1,18 +1,23 @@
 import { HOTELS } from '../mocks/hotels.mock';
 import { Injectable } from '@angular/core';
-import { IHotel } from '../models/hotels.models';
+import { IHotel, Stars } from '../models/hotels.models';
 import { Observable, of, BehaviorSubject } from 'rxjs';
+
+export type StarsFiltering = Stars | 'All';
 
 @Injectable({ providedIn: 'root' })
 export class HotelsService {
   private favoriteHotels: Array<IHotel> = [];
+
   private hotelsFilteringKeywordSubject: BehaviorSubject<
     string
   > = new BehaviorSubject('');
-
   private hotelsFilteringKeyword = this.hotelsFilteringKeywordSubject.asObservable();
 
-  constructor() {}
+  private hotelsStarsFilteringSubject: BehaviorSubject<
+    StarsFiltering
+  > = new BehaviorSubject<StarsFiltering>('All');
+  private hotelsStarsFiltering = this.hotelsStarsFilteringSubject.asObservable();
 
   public getHotels(): Observable<Array<IHotel>> {
     return of(HOTELS);
@@ -42,5 +47,13 @@ export class HotelsService {
 
   public setHotelsFilterKeyword(keyword: string): void {
     this.hotelsFilteringKeywordSubject.next(keyword);
+  }
+
+  public getHotelsStarsFiltering(): Observable<StarsFiltering> {
+    return this.hotelsStarsFiltering;
+  }
+
+  public setHotelsStatsFiltering(starsFilter: StarsFiltering): void {
+    this.hotelsStarsFilteringSubject.next(starsFilter);
   }
 }

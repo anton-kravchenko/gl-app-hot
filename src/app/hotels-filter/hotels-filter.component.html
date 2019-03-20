@@ -1,8 +1,17 @@
 <p class="left">Filter hotels:</p>
 <div class="row">
-  <input (input)="updateSearchKeyword($event.target.value)" type="text" />
-  <div *ngFor="let star of range(3, 6, 1)" class="row pointer">
+  <input (input)="setSearchKeyword($event.target.value)" type="text" />
+
+  <div
+    (click)="setStarsFilter(star)"
+    *ngFor="let star of range(3, 6, 1)"
+    class="row pointer"
+  >
     <p class="label">{{ star }}</p>
     <mat-icon>star</mat-icon>
+  </div>
+
+  <div (click)="setStarsFilter('All')" class="row pointer">
+    <p class="label">All</p>
   </div>
 </div>
