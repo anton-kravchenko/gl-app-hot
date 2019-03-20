@@ -1,4 +1,4 @@
-<div *ngFor="let hotel of hotels">
+<div *ngFor="let hotel of (hotels | hotelsFilter: filterKeyword)">
   <app-hotel-card
     [hotel]="hotel"
     [isSelected]="hotel === selectedHotel"

@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HotelCardComponent } from './hotel-card/hotel-card.component';
 import { HotelsFilterComponent } from './hotels-filter/hotels-filter.component';
 import { FavoriteHotelsComponent } from './favorite-hotels/favorite-hotels.component';
+import { HotelsFilterPipe } from './pipes/hotels-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FavoriteHotelsComponent } from './favorite-hotels/favorite-hotels.compo
     HotelCardComponent,
     HotelsFilterComponent,
     FavoriteHotelsComponent,
+    HotelsFilterPipe,
   ],
   imports: [
     BrowserModule,

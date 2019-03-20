@@ -1,12 +1,16 @@
 import { HOTELS } from '../mocks/hotels.mock';
 import { Injectable } from '@angular/core';
 import { IHotel } from '../models/hotels.models';
-import { Observable, of } from 'rxjs';
-
+import { Observable, of, BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class HotelsService {
   private favoriteHotels: Array<IHotel> = [];
+  private hotelsFilteringKeywordSubject: BehaviorSubject<
+    string
+  > = new BehaviorSubject('');
+
+  private hotelsFilteringKeyword = this.hotelsFilteringKeywordSubject.asObservable();
 
   constructor() {}
 
@@ -14,7 +18,7 @@ export class HotelsService {
     return of(HOTELS);
   }
 
-  public getFavoriteHotels(): Array<IHotel>{
+  public getFavoriteHotels(): Array<IHotel> {
     return this.favoriteHotels;
   }
 
@@ -30,5 +34,13 @@ export class HotelsService {
 
   public isInFavorites(hotel: IHotel): boolean {
     return this.favoriteHotels.includes(hotel);
+  }
+
+  public getHotelsFilterKeyword(): Observable<string> {
+    return this.hotelsFilteringKeyword;
+  }
+
+  public setHotelsFilterKeyword(keyword: string): void {
+    this.hotelsFilteringKeywordSubject.next(keyword);
   }
 }
