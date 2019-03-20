@@ -1,3 +1,24 @@
+# Implementation status
+
+- [x] добавить компоненту favorites hotels
+  - [x] данные в app-hotels, на том же уровне где и hotels, selectedHotel
+  - [x] отображает список
+- [x] в список к каждому элементу добавить кновпу +Add to favorites (можно под двемя картинками в списке)
+- [x] при клике на +Add to favorites добавляется элемент в favorites hotels
+- [x] удалить элемент из favorites, кликаем на [x] - удаляем hotel из списка favorites
+- [x] advanced
+  - [x] нотификации
+    - [x] 'Добавлено в favorites!'
+    - [x] 'Удалено из favorites!'
+    - [x] Если элемент уже есть в списке favorites
+      - [x] или попап что уже добавлен
+      - [] - или считать колличетсво нажатий (voted - IFavoriteHotel расширить полем от IHotel)
+- сделать загрузку hotels асинхронной (setTimeout, 3 sec) -
+- для advanced - можно сделать спискок this.hotels\$ = of(mockedHotels).pipe(delay(3000))
+- для advanced - кастомная директива, навешиваем на hotels list, пока гдузиться сделать оверлей над списком
+- Loading... текст вместо директивы - попроще
+- подсвечивать четные отели другим цветом (зебра)
+
 # GlAppHot
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
